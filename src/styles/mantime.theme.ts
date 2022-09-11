@@ -1,6 +1,6 @@
-import { MantineTheme } from '@mantine/core';
+import { MantineThemeOverride } from '@mantine/core';
 
-export const theme: MantineTheme = {
+export const theme: MantineThemeOverride = {
  colorScheme: 'dark',
  // fontFamily: 'Open Sans, sans serif',
 };

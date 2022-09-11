@@ -3,7 +3,7 @@ import '../styles/globals.css';
 import { MantineProvider } from '@mantine/core';
 
 import { theme } from '../styles/mantime.theme';
-import Layout from './components/layout';
+import Layout from './components/Layout';
 
 import type { AppProps } from 'next/app';
 export default function App(props: AppProps) {
@@ -15,6 +15,7 @@ export default function App(props: AppProps) {
         <Layout>
           <Component {...pageProps} />
         </Layout>
+        ={' '}
       </MantineProvider>
     </>
   );
