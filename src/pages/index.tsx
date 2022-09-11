@@ -15,7 +15,7 @@ interface Props {
 const Home: NextPage<Props> = ({ articles }) => {
   useEffect(() => {
     console.log(articles);
-  }, []);
+  }, [articles]);
 
   return (
     <div className={styles.container}>
