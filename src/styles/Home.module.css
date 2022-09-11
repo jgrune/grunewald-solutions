@@ -56,15 +56,6 @@
   font-size: 1.5rem;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
 .grid {
   display: flex;
   align-items: center;
@@ -106,6 +97,16 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.article {
+  max-width: 780px;
+  line-height: 1.5;
+}
+
+.publishDate {
+  font-size: 0.875rem;
+  color: #808080;
 }
 
 @media (max-width: 600px) {

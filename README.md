@@ -35,4 +35,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Note
 
-Initial project setup: https://www.scale.at/blog/static-website-nextjs-typescript-contentful
+Initial project setup: https://www.scale.at/blog/static-website-nextjs-typescript-contentful and https://www.scale.at/blog/cms-driven-content-structure-nextjs

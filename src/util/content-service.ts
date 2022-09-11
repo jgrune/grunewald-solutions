@@ -1,7 +1,7 @@
 import { createClient } from 'contentful';
 import { config } from 'dotenv';
 
-import { CONTENT_TYPE } from '../@types/contentful';
+import { CONTENT_TYPE, IBlogPostFields } from '../@types/contentful';
 
 /*
  * We tell TypeScript that those environment variables are always defined.
@@ -37,4 +37,16 @@ export default class ContentService {
    })
   ).items;
  }
+
+ async getPostBySlug(slug: string) {
+  return (
+   await this.client.getEntries<IBlogPostFields>({
+    content_type: "blogPost",
+    "fields.slug": slug,
+   })
+  ).items[0];
+ }
 }
+
+
+
