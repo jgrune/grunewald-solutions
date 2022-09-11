@@ -15,7 +15,6 @@ export default function App(props: AppProps) {
         <Layout>
           <Component {...pageProps} />
         </Layout>
-        ={' '}
       </MantineProvider>
     </>
   );
