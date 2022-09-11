@@ -13,11 +13,11 @@ interface Props {
 }
 
 const Article: NextPage<Props> = ({ article }) => {
-  console.log('article', article);
+  // console.log('article', article);
   return (
     <div className={styles.container}>
       <Head>
-        <title>{article.title} | My awesome Harry Potter blog</title>
+        <title>{article.title}</title>
         {/* <meta name='description' content={description} /> */}
       </Head>
 
