@@ -29,9 +29,12 @@ const Home: NextPage<Props> = ({ articles }) => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to Grunewald Solutoins!</h1>
+        <h1 className={styles.title}>Grunewald Solutions</h1>
 
-        <p className={styles.description}>Professional Services</p>
+        <p className={styles.description}>
+          Best-in-class management consulting, strategic direction and planning,
+          fundraising, and executive coaching
+        </p>
 
         <div className={styles.grid}>
           {articles.map((article) => (
