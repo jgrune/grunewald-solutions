@@ -1,63 +1,31 @@
-import React, { Children, useState } from 'react';
+import { useState } from 'react';
 
-import { Anchor, AppShell, Burger, createStyles, Header, MediaQuery, Navbar } from '@mantine/core';
+import { AppShell, Container, Navbar } from '@mantine/core';
 
-type Props = {
-  children: React.ReactNode;
-};
+import { HeaderAction } from './HeaderAction';
 
-const useStyles = createStyles((theme) => ({
-  navbar: {
-    [theme.fn.largerThan('sm')]: {
-      display: 'none',
-    },
-  },
-
-  links: {
-    [theme.fn.smallerThan('sm')]: {
-      display: 'none',
-    },
-  },
-}));
-
-const Layout = (props: Props) => {
+const Layout = (props: any) => {
   const [opened, setOpened] = useState(false);
-  const { classes } = useStyles();
 
   return (
     <AppShell
-      fixed
-      navbarOffsetBreakpoint='sm'
-      header={
-        <Header height={50}>
-          <MediaQuery largerThan='sm' styles={{ display: 'none' }}>
-            <Burger
-              opened={opened}
-              onClick={() => setOpened((o) => !o)}
-              size='sm'
-              mr='xl'
-            />
-          </MediaQuery>
-          <div className={classes.links}>
-            <Anchor>Home</Anchor>
-            <Anchor>Features</Anchor>
-            <Anchor>Pricing</Anchor>
-          </div>
-        </Header>
-      }
+      padding='md'
       navbar={
-        <Navbar
-          className={classes.navbar}
-          width={{ base: '100%', sm: 0 }}
-          hidden={!opened}
-        >
-          <Anchor>Home</Anchor>
-          <Anchor>Features</Anchor>
-          <Anchor>Pricing</Anchor>
+        <Navbar width={{ base: '100%', sm: 0 }} hidden={!opened}>
+          {/* Navbar content */}
         </Navbar>
       }
+      header={<HeaderAction setOpened={setOpened}></HeaderAction>}
+      styles={(theme) => ({
+        main: {
+          backgroundColor:
+            theme.colorScheme === 'dark'
+              ? theme.colors.dark[8]
+              : theme.colors.gray[0],
+        },
+      })}
     >
-      {props.children}
+      <Container>{props.children}</Container>
     </AppShell>
   );
 };
