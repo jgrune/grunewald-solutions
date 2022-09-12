@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { AppShell, Container, Navbar } from '@mantine/core';
 
-import { HeaderAction } from './HeaderAction';
+import HeaderAction from './HeaderAction';
 
 const Layout = (props: any) => {
   const [opened, setOpened] = useState(false);

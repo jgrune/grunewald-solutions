@@ -3,7 +3,6 @@ import '../styles/globals.css';
 import { MantineProvider } from '@mantine/core';
 
 import { theme } from '../styles/mantime.theme';
-import { HeaderAction } from './components/HeaderAction';
 import Layout from './components/Layout';
 
 import type { AppProps } from 'next/app';

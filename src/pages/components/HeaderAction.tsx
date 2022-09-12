@@ -117,7 +117,7 @@ const links = [
   },
 ];
 
-export function HeaderAction({ setOpened }: HeaderActionProps) {
+const HeaderAction = ({ setOpened }: HeaderActionProps) => {
   const { classes } = useStyles();
   const [opened, { toggle }] = useDisclosure(false, {
     onOpen: () => setOpened(true),
@@ -181,4 +181,6 @@ export function HeaderAction({ setOpened }: HeaderActionProps) {
       </Container>
     </Header>
   );
-}
+};
+
+export default HeaderAction;
