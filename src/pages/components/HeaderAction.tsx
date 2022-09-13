@@ -1,8 +1,11 @@
+import Link from 'next/link';
+
 import {
     Burger, Button, Center, Container, createStyles, Group, Header, Menu
 } from '@mantine/core';
 import { MantineLogo } from '@mantine/ds';
 import { useDisclosure } from '@mantine/hooks';
+import { NextLink } from '@mantine/next';
 import { IconChevronDown } from '@tabler/icons';
 
 const HEADER_HEIGHT = 60;
@@ -64,56 +67,58 @@ interface HeaderActionProps {
 
 const links = [
   {
-    link: '/about',
-    label: 'Features',
+    link: '/inside-grunewald-solutions',
+    label: 'Inside GrunewaldSolutions',
   },
   {
     link: '#1',
-    label: 'Learn',
+    label: 'Prior Solutions and Clients',
     links: [
       {
-        link: '/docs',
-        label: 'Documentation',
+        link: '/coaching-and-culture',
+        label: 'Coaching & Culture',
       },
       {
-        link: '/resources',
-        label: 'Resources',
+        link: '/governance-and-staff',
+        label: 'Governance & Staff',
       },
       {
-        link: '/community',
-        label: 'Community',
+        link: '/financial-resources',
+        label: 'Financial Resources',
       },
       {
-        link: '/blog',
-        label: 'Blog',
+        link: '/government-international',
+        label: 'Government/International',
+      },
+      {
+        link: '/human-resources',
+        label: 'Human Resources',
+      },
+      {
+        link: '/personnel-policies',
+        label: 'Personnel Policies',
+      },
+      {
+        link: '/communications-and-internet',
+        label: 'Communications & Internet',
+      },
+      {
+        link: '/programs-and-events',
+        label: 'Programs & Events',
       },
     ],
   },
   {
-    link: '/about',
-    label: 'About',
+    link: '/recommendations',
+    label: 'Recommendations',
   },
   {
-    link: '/pricing',
-    label: 'Pricing',
+    link: '/professional-experience',
+    label: 'Professional Experience',
   },
   {
-    link: '#2',
-    label: 'Support',
-    links: [
-      {
-        link: '/faq',
-        label: 'FAQ',
-      },
-      {
-        link: '/demo',
-        label: 'Book a demo',
-      },
-      {
-        link: '/forums',
-        label: 'Forums',
-      },
-    ],
+    link: '/volunteer-experience',
+    label: 'Volunteer Experience',
   },
 ];
 
@@ -125,7 +130,9 @@ const HeaderAction = ({ setOpened }: HeaderActionProps) => {
   });
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>{item.label}</Menu.Item>
+      <Menu.Item key={item.link} component={NextLink} href={item.link}>
+        {item.label}
+      </Menu.Item>
     ));
 
     if (menuItems) {
@@ -149,14 +156,9 @@ const HeaderAction = ({ setOpened }: HeaderActionProps) => {
     }
 
     return (
-      <a
-        key={link.label}
-        href={link.link}
-        className={classes.link}
-        onClick={(event) => event.preventDefault()}
-      >
-        {link.label}
-      </a>
+      <Link key={link.label} href={link.link}>
+        <a className={classes.link}>{link.label}</a>
+      </Link>
     );
   });
 
